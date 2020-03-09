@@ -8,8 +8,13 @@
 <body>
 
 <div>
+<h1 id="page">Ứng dụng quản lý sách</h1>
+<p>Tìm kiếm sách theo tên</p>
+    <p>Nhập tên sách: <input type="text" id="search"></p>
+    <button onclick="">Tìm kiếm</button>
+    <button onclick="">Quay về</button>
     <h1>Danh sách các cuốn sách hiện có</h1>
-    <table>
+    <table id = 'nen'>
         <thead>
         <tr>
             <th>STT</th>
@@ -18,13 +23,22 @@
             <th>Thể loại</th>
             <th>Số lượng</th>
             <th>Tác giả</th>
-            <th colspan="2" style="text-align: center">Thao tác</th>
+            <th colspan="3" style="text-align: center">Thao tác</th>
         </tr>
         </thead>
         <tbody id='table'>
 
         </tbody>
     </table>
+</div>
+<div id="add">
+    <p>Điền thông tin sách cần nhập vào bảng theo form</p>
+    <p>Tên sách <input type = "text" id="name-input"></p>
+    <p>Mã sách <input type = "text" id="code-input"></p>
+    <p>Thể loại <input type = "text" id="type-input"></p>
+    <p>Số lượng <input type = "text" id="number-input"></p>
+    <p>Tác giả <input type = "text" id="write-input"></p>
+    <button type="button" onclick="add()">Add</button>
 </div>
 
 <script src="js/my.js"></script>
