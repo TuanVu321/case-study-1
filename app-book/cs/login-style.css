@@ -1,0 +1,15 @@
+#login{
+    margin-top: 5%;
+    margin-left: 40%;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+body{
+    background-image: url("../image/anh.jpg") ;
+}
+
+tr,td {
+    color: white;
+}
