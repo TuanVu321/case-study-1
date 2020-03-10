@@ -27,8 +27,12 @@ function Book(name, book_code, number, book_writing, type) {
 let bookList = [];
 let book1 = new Book('doremon', '001', '100', 'Fujiko Fujio', 'Truyện tranh');
 bookList.push(book1);
-let book06 = new Book('123', '0011', '1010', 'Fuj1iko Fujio', 'Truyệ1n tranh');
-bookList.push(book06);
+let book2 = new Book('Gánh xiếc quái dị', '002', '120', 'Darren Shan', 'Tiểu thuyết');
+bookList.push(book2);
+let book3 = new Book('Thép đã tôi thế đấy', '003', '30', 'Ostrovsky', 'Tiểu thuyết');
+bookList.push(book3);
+let book4 = new Book('Toán lớp 1', '004', '1030', 'Bộ giáo dục', 'Sách giáo khoa');
+bookList.push(book4);
 
 //hien thi
 function showList() {

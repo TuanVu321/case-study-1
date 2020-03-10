@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="cs/my-style.css">
 </head>
 <body>
+
 <div>
-    <div>
-        <h1 id="page">Ứng dụng quản lý sách</h1>
+    <div id="page">
+        <h1>Ứng dụng quản lý sách</h1>
     </div>
 
     <div>
@@ -34,21 +35,24 @@
 
 
         <div id="add">
-            <p>Tìm kiếm sách theo tên</p>
-            <p>Nhập tên sách: <input type="text" id="search"></p>
-            <button onclick="searchBook()">Tìm kiếm</button>
-            <button onclick="showList()">Quay về</button>
-            <p>Điền thông tin sách cần nhập vào bảng theo form</p>
-            <p>Tên sách </p><span><input type="text" id="name-input"></span>
-            <p>Mã sách </p><span><input type="text" id="code-input"></span>
-            <p>Thể loại </p><span><input type="text" id="type-input"></span>
-            <p>Số lượng </p><span><input type="text" id="number-input"></span>
-            <p>Tác giả </p><span><input type="text" id="write-input"></span><br>
-            <p></p>
-            <button type="button" onclick="add()">Add</button>
+            <div id="info">
+                <p>Tìm kiếm sách theo tên</p>
+                <p>Nhập tên sách: <input type="text" id="search"></p>
+                <button onclick="searchBook()">Tìm kiếm</button>
+                <button onclick="showList()">Quay về</button>
+                <p>Điền thông tin sách cần nhập vào bảng theo form</p>
+                <p>Tên sách </p><span><input type="text" id="name-input"></span>
+                <p>Mã sách </p><span><input type="text" id="code-input"></span>
+                <p>Thể loại </p><span><input type="text" id="type-input"></span>
+                <p>Số lượng </p><span><input type="text" id="number-input"></span>
+                <p>Tác giả </p><span><input type="text" id="write-input"></span><br>
+                <p></p>
+                <button type="button" onclick="add()">Add</button>
+            </div>
         </div>
     </div>
 </div>
+
 
 <script src="js/my.js"></script>
 </body>
