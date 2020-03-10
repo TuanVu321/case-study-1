@@ -27,7 +27,7 @@ function Book(name, book_code, number, book_writing, type) {
 let bookList = [];
 let book1 = new Book('doremon', '001', '100', 'Fujiko Fujio', 'Truyện tranh');
 bookList.push(book1);
-let book06 = new Book('doremon1', '0011', '1010', 'Fuj1iko Fujio', 'Truyệ1n tranh');
+let book06 = new Book('123', '0011', '1010', 'Fuj1iko Fujio', 'Truyệ1n tranh');
 bookList.push(book06);
 
 //hien thi
@@ -119,13 +119,6 @@ function changeToggle(id) {
     bookList[id].number = numberToggle.value;
     bookList[id].book_writing = book_writingToggle.value;
 
-    console.log(nameToggle.value);
-    console.log(book_codeToggle.value);
-    console.log(typeToggle.value);
-    console.log(numberToggle.value);
-    console.log(book_writingToggle.value);
-
-
     nameToggle.parentNode.innerHTML = "<td id=\"name" + id + "\">" + nameToggle.value + "</td>";
     book_codeToggle.parentNode.innerHTML = "<td id=\"code" + id + "\">" + book_codeToggle.value + "</td>";
     typeToggle.parentNode.innerHTML = "<td id=\"type" + id + "\">" + typeToggle.value + "</td>";
@@ -155,7 +148,56 @@ function add(name, book_code, number, book_writing, type) {
     typeInput = "";
 }
 
+// tim kiem
 
 
+function search(name) {
+    let html = "";
+    for (let id = 0; id < bookList.length; id++) {
+        if (bookList[id].name.includes(name)) {
+            html = html + '<tr>';
+            html = html + '<td width="50px">';
+            html = html + (id + 1);
+            html = html + '</td>';
+            html = html + "<td id=\"name" + (id) + "\">";
+            html = html + bookList[id].getName();
+            html = html + '</td>';
+            html = html + "<td id=\"code" + (id) + "\">";
+            html = html + bookList[id].getBook_code();
+            html = html + '</td>';
+            html = html + "<td id=\"type" + (id) + "\">";
+            html = html + bookList[id].getType();
+            html = html + '</td>';
+            html = html + "<td id=\"number" + (id) + "\">";
+            html = html + bookList[id].getNumber();
+            html = html + '</td>';
+            html = html + "<td id=\"write" + (id) + "\">";
+            html = html + bookList[id].getBook_writing();
+            html = html + '</td>';
+            html = html + '<td>';
+            html = html + "<button id =\"delete" + id + "\"  onclick=\"delete1(this.id.substring(this.id.length -1))\" >Delete</button>";
+            html = html + '</td>';
+            html = html + '<td>';
+            html = html + "<button id =\"edit" + id + "\"  onclick=\"edit(this.id.substring(this.id.length -1))\">Edit</button>";
+            html = html + '</td>';
+            html = html + '<td>';
+            html = html + "<button id =\"save" + id + "\"  onclick=\"save(this.id.substring(this.id.length -1))\">Save</button>";
+            html = html + '</td>';
+            html = html + '</tr>';
+        }
+
+    }
+    document.getElementById('table').innerHTML = html;
+}
+
+
+function searchBook() {
+let bookName = document.getElementById('search').value;
+    search(bookName);
+}
+
+document.getElementById('search').addEventListener('keypress', function () {
+    search(document.getElementById('search').value)
+}, false);
 
 

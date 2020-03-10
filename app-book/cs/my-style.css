@@ -1,5 +1,5 @@
 table {
-    width: 70%;
+    width: 90%;
     border: 2px black solid;
     border-collapse: collapse;
     text-align: left;
@@ -22,22 +22,34 @@ h1 {
     margin-bottom: 50px;
     text-align: center;
     margin-left: 100px;
-
+  
 }
 
 #nen {
     background: aqua;
 }
 
-#add {
-    height: 200px;
-    text-align: left;
-    padding-top: 20px;
-    padding-left: 20px;
-    border-bottom: 2px black;
-}
+
 #page{
     text-align: center;
     width: 100%;
+    background: green;
+    height: 100px;
+    margin-bottom: 0;
    }
+#add {
+    width: 30%;
+    height: 1000px;
+    text-align: left;
+    float: left;
+    background: #e4e0ff;
+    margin-top: 0;
 
+
+}
+
+#main{
+width: 70%;
+float: left;
+
+}
