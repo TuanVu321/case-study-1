@@ -73,8 +73,7 @@ display(list);
 
 function changeNumber(id, a) {
     list[id].number -= a;
-    alert(list[id].number);
-    localStorage.setItem("list",JSON.stringify(list));
+    localStorage.setItem("list", JSON.stringify(list));
 }
 
 function finish(id) {
@@ -84,4 +83,3 @@ function finish(id) {
     localStorage.setItem("order", JSON.stringify(order));
     window.location.assign("front-end.html")
 }
-
