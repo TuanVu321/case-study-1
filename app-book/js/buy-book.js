@@ -1,50 +1,53 @@
-function display() {
-    let a = order[0];
+let dataOrder = JSON.parse(localStorage.getItem("order"));
+let list = JSON.parse(localStorage.getItem("list"));
+let a = dataOrder[0];
+
+function display(bookList) {
     let html = "";
     html = html + "<table>";
     html = html + "<tr>";
     html = html + "<td>";
-    html = html + "Tên sách: " ;
+    html = html + "Tên sách: ";
     html = html + "</td>";
     html = html + "<td>";
-    html = html + bookList[a].getName();
-    html = html + "</td>";
-    html = html + "</tr>";
-    html = html + "<tr>";
-    html = html + "<td>";
-    html = html + "Tác giả: " ;
-    html = html + "</td>";
-    html = html + "<td>";
-    html = html + bookList[a].getBook_writing();
+    html = html + bookList[a].name;
     html = html + "</td>";
     html = html + "</tr>";
     html = html + "<tr>";
     html = html + "<td>";
-    html = html + "Thể loại: " ;
+    html = html + "Tác giả: ";
     html = html + "</td>";
     html = html + "<td>";
-    html = html + bookList[a].getType();
-    html = html + "</td>";
-    html = html + "</tr>";
-    html = html + "<tr>";
-    html = html + "<td>";
-    html = html + "Số lượng: " ;
-    html = html + "</td>";
-    html = html + "<td>";
-    html = html + bookList[a].getNumber();
+    html = html + bookList[a].book_writing;
     html = html + "</td>";
     html = html + "</tr>";
     html = html + "<tr>";
     html = html + "<td>";
-    html = html + "Mã sách: " ;
+    html = html + "Thể loại: ";
     html = html + "</td>";
     html = html + "<td>";
-    html = html + bookList[a].getBook_code();
+    html = html + bookList[a].type;
     html = html + "</td>";
     html = html + "</tr>";
     html = html + "<tr>";
     html = html + "<td>";
-    html = html + "Địa chỉ giao sách " ;
+    html = html + "Số lượng: ";
+    html = html + "</td>";
+    html = html + "<td>";
+    html = html + bookList[a].number;
+    html = html + "</td>";
+    html = html + "</tr>";
+    html = html + "<tr>";
+    html = html + "<td>";
+    html = html + "Mã sách: ";
+    html = html + "</td>";
+    html = html + "<td>";
+    html = html + bookList[a].book_code;
+    html = html + "</td>";
+    html = html + "</tr>";
+    html = html + "<tr>";
+    html = html + "<td>";
+    html = html + "Địa chỉ giao sách ";
     html = html + "</td>";
     html = html + "<td>";
     html = html + "<input type='text'>";
@@ -52,7 +55,7 @@ function display() {
     html = html + "</tr>";
     html = html + "<tr>";
     html = html + "<td>";
-    html = html + "Số lượng muốn mua: " ;
+    html = html + "Số lượng muốn mua: ";
     html = html + "</td>";
     html = html + "<td>";
     html = html + "<input id=\"number-buy\" type='number'>";
@@ -66,19 +69,19 @@ function display() {
 }
 
 
-display();
+display(list);
+
+function changeNumber(id, a) {
+    list[id].number -= a;
+    alert(list[id].number);
+    localStorage.setItem("list",JSON.stringify(list));
+}
 
 function finish(id) {
     let a = document.getElementById('number-buy').value;
-
-    function changeNumber(id, a) {
-        bookList[id].setBook_code(id, a)
-    }
-
+    changeNumber(id, a);
     order = [];
-    window.location.assign("front-end.html");
+    localStorage.setItem("order", JSON.stringify(order));
+    window.location.assign("front-end.html")
 }
 
-function changeNumber(id, a) {
-    bookList[id].setBook_code(id, a)
-}

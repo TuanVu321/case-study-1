@@ -47,11 +47,13 @@ function delete1(id) {
 
 function edit(id) {
     toggle(id)
+
 }
 
 function save(id) {
     if (confirm("Bạn có muốn lưu?")) {
         changeToggle(id);
+        localStorage.setItem("list",JSON.stringify(bookList));
     } else {
         toggle(id);
     }
@@ -101,11 +103,13 @@ function add(name, book_code, number, book_writing, type) {
     let book = new Book(nameInput, codeInput, numberInput, writeInput, typeInput);
     bookList.push(book);
     showList(bookList);
+   localStorage.setItem("list",JSON.stringify(bookList));
     nameInput = "";
     codeInput = "";
     numberInput = "";
     writeInput = "";
     typeInput = "";
+
 }
 
 

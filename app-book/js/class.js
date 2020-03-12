@@ -19,9 +19,7 @@ function Book(name, book_code, number, book_writing, type) {
     this.getType = function () {
         return this.type;
     };
-    this.setBook_code = function (id, a) {
-        this.book_code = book_code - a;
-    }
+
 }
 
 function Login(username, password) {

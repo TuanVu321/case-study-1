@@ -25,6 +25,3 @@ login.push(login5);
 let login6 = new Login('admin6', 'admin6');
 login.push(login6);
 
-
-
-let  order =[];
