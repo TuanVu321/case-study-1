@@ -1,43 +1,4 @@
-//class
-
-function Book(name, book_code, number, book_writing, type) {
-    this.name = name;
-    this.book_code = book_code;
-    this.number = number;
-    this.book_writing = book_writing;
-    this.type = type;
-    this.getName = function () {
-        return this.name;
-    };
-    this.getBook_code = function () {
-        return this.book_code;
-    };
-    this.getNumber = function () {
-        return this.number;
-    };
-    this.getBook_writing = function () {
-        return this.book_writing;
-    };
-    this.getType = function () {
-        return this.type;
-    }
-}
-
-
-
-//test
-let bookList = [];
-let book1 = new Book('doremon', '001', '100', 'Fujiko Fujio', 'Truyện tranh');
-bookList.push(book1);
-let book2 = new Book('Gánh xiếc quái dị', '002', '120', 'Darren Shan', 'Tiểu thuyết');
-bookList.push(book2);
-let book3 = new Book('Thép đã tôi thế đấy', '003', '30', 'Ostrovsky', 'Tiểu thuyết');
-bookList.push(book3);
-let book4 = new Book('Toán lớp 1', '004', '1030', 'Bộ giáo dục', 'Sách giáo khoa');
-bookList.push(book4);
-
-//hien thi
-function showList() {
+function showList(bookList) {
     let html = '';
     for (let id = 0; id < bookList.length; id++) {
         html = html + '<tr>';
@@ -73,19 +34,17 @@ function showList() {
     document.getElementById('table').innerHTML = html;
 }
 
-showList();
+showList(bookList);
 
-//xoa
+
 function delete1(id) {
-    console.log(id);
     let r = confirm('Ban co muon xoa hay khong?');
     if (r == true) {
         bookList.splice(id, 1);
     }
-    showList();
+    showList(bookList);
 }
 
-// sua
 function edit(id) {
     toggle(id)
 }
@@ -99,19 +58,17 @@ function save(id) {
 
 }
 
-// hien thi bang chuyen doi
-
 
 function toggle(id) {
     document.getElementById("name" + id).innerHTML = "<td><input id=\"name-toggle" + id + "\" value=\"" + bookList[id].name + "\"/></td>";
     document.getElementById("code" + id).innerHTML = "<td><input id=\"code-toggle" + id + "\" value=\"" + bookList[id].book_code + "\"/></td>";
     document.getElementById("type" + id).innerHTML = "<td><input id=\"type-toggle" + id + "\" value=\"" + bookList[id].type + "\"/></td>";
-    document.getElementById("number" + id).innerHTML = "<td><input id=\"number-toggle" + id + "\" value=\"" + bookList[id].number + "\"/></td>";
+    document.getElementById("number" + id).innerHTML = "<td><input type='number' id=\"number-toggle" + id + "\" value=\"" + bookList[id].number + "\"/></td>";
     document.getElementById("write" + id).innerHTML = "<td><input id=\"write-toggle" + id + "\" value=\"" + bookList[id].book_writing + "\"/></td>";
 
 }
 
-//luu chuyen doi
+
 function changeToggle(id) {
     let nameToggle = document.getElementById("name-toggle" + id),
         book_codeToggle = document.getElementById("code-toggle" + id),
@@ -134,9 +91,6 @@ function changeToggle(id) {
 }
 
 
-// Them object
-
-
 function add(name, book_code, number, book_writing, type) {
     let nameInput = document.getElementById('name-input').value,
         codeInput = document.getElementById('code-input').value,
@@ -146,15 +100,13 @@ function add(name, book_code, number, book_writing, type) {
 
     let book = new Book(nameInput, codeInput, numberInput, writeInput, typeInput);
     bookList.push(book);
-    showList();
+    showList(bookList);
     nameInput = "";
     codeInput = "";
     numberInput = "";
     writeInput = "";
     typeInput = "";
 }
-
-// tim kiem
 
 
 function search(name) {
@@ -198,7 +150,7 @@ function search(name) {
 
 
 function searchBook() {
-let bookName = document.getElementById('search').value;
+    let bookName = document.getElementById('search').value;
     search(bookName);
 }
 
@@ -207,7 +159,10 @@ document.getElementById('search').addEventListener('keypress', function () {
 }, false);
 
 
-//thoat
 function exit() {
     window.location.assign("login.html");
+}
+
+function change() {
+    window.location.assign("front-end.html");
 }

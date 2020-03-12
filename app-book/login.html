@@ -9,24 +9,21 @@
 </head>
 <body>
 <h1>Hãy đăng nhập tài khoản quản lý</h1>
-<div id="login">
-    <table>
-        <tr>
-            <td>Username</td>
-            <td><input type="text" id="input-username"></td>
-        </tr>
-        <tr>
-            <td>Password</td>
-            <td><input type="text" id="input-password"></td>
-        </tr>
-        <tr>
-            <td colspan="2" style="text-align: right">
-                <button type="button" onclick="login0()">SUBMIT</button>
-            </td>
-        </tr>
-    </table>
 
+<div id="login">
+<div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Username" id="input-username">
 </div>
+<div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" id="input-password">
+</div>
+<button class="btn" onclick="login0()">Đăng nhập</button>
+</div>
+<script src="js/class.js"></script>
+<script src="js/object.js"></script>
 <script src="js/login.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </body>
 </html>
