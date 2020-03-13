@@ -72,7 +72,7 @@ function display(bookList) {
 display(list);
 
 function changeNumber(id, a) {
-    list[id].number -= a;
+        list[id].number -= a;
     localStorage.setItem("list", JSON.stringify(list));
 
 
@@ -80,14 +80,19 @@ function changeNumber(id, a) {
 
 function finish(id) {
     let a = document.getElementById('number-buy').value;
-    if (list[id].number >= a) {
-        changeNumber(id, a);
-        alert("Đã đặt hàng xong");
-        order = [];
-        localStorage.setItem("order", JSON.stringify(order));
-        window.location.assign("front-end.html")
-    } else {
-        alert('Số sách bạn mua vượt quá số lượng chúng tôi có');
+    if(a==""){
+        alert("Bạn chưa nhập số lượng sách!")
+    }else{
+        if (list[id].number >= a) {
+            changeNumber(id, a);
+            alert("Đã đặt hàng xong");
+            order = [];
+            localStorage.setItem("order", JSON.stringify(order));
+            window.location.assign("front-end.html")
+        } else {
+            alert('Số sách bạn mua vượt quá số lượng chúng tôi có');
+        }
     }
+
 
 }
